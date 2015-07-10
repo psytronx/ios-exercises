@@ -11,8 +11,8 @@
 @implementation StarTrekArrays
 
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
-    /* WORK HERE */
-    return @[];
+    
+    return [characterString componentsSeparatedByString:@";"];
 }
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
