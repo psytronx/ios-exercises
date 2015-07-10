@@ -37,7 +37,7 @@
     if (cheeseCount == 1) {
         sentence = [NSString stringWithFormat:@"1 cheese"];
     } else {
-        sentence = [NSString stringWithFormat:@"%ld cheeses", cheeseCount];    }
+        sentence = [NSString stringWithFormat:@"%ld cheeses", (long)cheeseCount];    }
     
     /*
      (You will learn more about if/else statements in a later checkpoint.)
