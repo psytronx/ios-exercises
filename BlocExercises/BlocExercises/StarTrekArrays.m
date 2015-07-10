@@ -13,16 +13,22 @@
 - (NSArray *) arrayOfStarTrekCharactersFromString:(NSString *)characterString {
     
     return [characterString componentsSeparatedByString:@";"];
+    
 }
 
 - (NSString *) stringOfStarTrekCharactersFromArray:(NSArray *)characterArray {
     
     return [characterArray componentsJoinedByString:@";"];
+    
 }
 
 - (NSArray *) alphabeticallySortedStarTrekCharactersFromArray:(NSArray *)characterArray {
-    /* WORK HERE */
-    return @[];
+    
+    NSMutableArray *mutableCharacterArray = [characterArray mutableCopy];
+    NSSortDescriptor *sortAlphabetically = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES selector: @selector(localizedCaseInsensitiveCompare:)];
+    [mutableCharacterArray sortUsingDescriptors:@[sortAlphabetically]];
+    return (NSArray *) mutableCharacterArray;
+    
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
