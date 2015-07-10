@@ -32,7 +32,12 @@
 }
 
 - (BOOL) characterArrayContainsWorf:(NSArray *)characterArray {
-    /* WORK HERE */
+    
+    NSPredicate *isWharfThere = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'worf'"];
+    NSArray *wharfArray = [characterArray filteredArrayUsingPredicate:isWharfThere];
+    if (wharfArray.count > 0){
+        return YES;
+    }
     return NO;
 }
 
